@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#050508">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>Trabaja con Nosotros — Plan B Strategic Solutions</title>
+<!-- Open Graph / LinkedIn -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="¡Estamos Contratando! — Plan B Strategic Solutions">
+<meta property="og:description" content="Vacantes abiertas: Impulsadoras, Mercaderistas y Dermoconsejeras. Únete a nuestro equipo de trade marketing farmacéutico.">
+<meta property="og:image" content="https://js-uio.github.io/Plan-B-Aplica/og-image.png">
+<meta property="og:url" content="https://js-uio.github.io/Plan-B-Aplica/">
+<meta property="og:site_name" content="Plan B Strategic Solutions">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="¡Estamos Contratando! — Plan B Strategic Solutions">
+<meta name="twitter:description" content="Vacantes abiertas: Impulsadoras, Mercaderistas y Dermoconsejeras. Postúlate ahora.">
+<meta name="twitter:image" content="https://js-uio.github.io/Plan-B-Aplica/og-image.png">
+<meta name="description" content="Vacantes abiertas en Plan B Strategic Solutions: Impulsadoras, Mercaderistas y Dermoconsejeras. Aplica ahora.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --midnight:#0a0a0a;
+  --navy:#0d1117;
+  --teal:#00d4ff;
+  --teal-light:#33e0ff;
+  --teal-dark:#00a8cc;
+  --teal-glow:rgba(0,212,255,.15);
+  --silver:#b0b8c4;
+  --cream:#f4f6f8;
+  --white:#ffffff;
+  --gray-100:#f1f5f9;
+  --gray-300:#cbd5e1;
+  --gray-500:#64748b;
+  --gray-700:#334155;
+  --red:#ef4444;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--gray-700);min-height:100vh}
+
+/* HERO */
+.hero{
+  background:linear-gradient(135deg,#050508 0%,#0d1117 60%,#0a1520 100%);
+  padding:3rem 1.5rem 4rem;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:-50%;right:-30%;width:600px;height:600px;
+  background:radial-gradient(circle,rgba(0,212,255,.1) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:-40%;left:-20%;width:500px;height:500px;
+  background:radial-gradient(circle,rgba(0,212,255,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.hero-logo{
+  display:block;max-width:180px;height:auto;margin:0 auto 1.5rem;
+  animation:fadeDown .6s ease-out;
+  filter:drop-shadow(0 4px 12px rgba(0,0,0,.3));
+}
+.hero-badge{
+  display:inline-block;background:rgba(0,212,255,.1);color:var(--teal);
+  font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.4rem 1rem;border-radius:100px;margin-bottom:1.5rem;
+  border:1px solid rgba(0,212,255,.2);
+  animation:fadeDown .6s ease-out;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;font-weight:800;
+  font-size:clamp(2rem,5vw,3.2rem);color:var(--white);
+  line-height:1.15;margin-bottom:1rem;
+  animation:fadeDown .6s ease-out .1s both;
+}
+.hero h1 span{color:var(--teal-light)}
+.hero p{
+  color:var(--gray-300);font-size:1.05rem;max-width:520px;margin:0 auto 2rem;
+  line-height:1.6;animation:fadeDown .6s ease-out .2s both;
+}
+.scroll-btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  background:var(--teal);color:#050508;font-weight:700;font-size:1.05rem;
+  padding:1rem 2.2rem;border-radius:14px;text-decoration:none;
+  transition:all .25s;box-shadow:0 4px 20px rgba(0,212,255,.35);
+  animation:fadeDown .6s ease-out .3s both, pulse 2s ease-in-out 1.5s infinite;
+  position:relative;
+  -webkit-tap-highlight-color:transparent;
+}
+@keyframes pulse{
+  0%,100%{box-shadow:0 4px 20px rgba(0,212,255,.35)}
+  50%{box-shadow:0 4px 30px rgba(0,212,255,.6),0 0 0 8px rgba(0,212,255,.15)}
+}
+.scroll-btn:hover{background:var(--teal-light);transform:translateY(-2px);box-shadow:0 6px 28px rgba(0,212,255,.45);animation:none}
+.scroll-btn:active{transform:scale(.96)}
+.scroll-btn svg{width:18px;height:18px}
+
+/* POSITIONS */
+.positions{padding:3rem 1.5rem 1rem;max-width:780px;margin:0 auto}
+.positions h2{
+  font-family:'Playfair Display',serif;font-weight:700;font-size:1.6rem;
+  color:var(--midnight);text-align:center;margin-bottom:2rem;
+}
+.pos-grid{display:grid;gap:1rem;margin-bottom:2.5rem}
+@media(min-width:600px){.pos-grid{grid-template-columns:repeat(3,1fr)}}
+.pos-card{
+  background:#fff;border-radius:14px;padding:1.5rem 1.25rem;text-align:center;
+  border:1px solid #e2e8f0;transition:all .25s;cursor:pointer;
+  perspective:600px;
+}
+.pos-card:hover{border-color:var(--teal);box-shadow:0 8px 30px var(--teal-glow);transform:translateY(-3px)}
+.pos-card.active{border-color:var(--teal);background:var(--teal-glow);box-shadow:0 8px 30px var(--teal-glow)}
+.pos-avatar{
+  width:100px;height:100px;margin:0 auto .75rem;
+  animation:float3d 3s ease-in-out infinite;
+  transform-style:preserve-3d;
+}
+.pos-card:nth-child(2) .pos-avatar{animation-delay:-.5s}
+.pos-card:nth-child(3) .pos-avatar{animation-delay:-1s}
+@keyframes float3d{
+  0%,100%{transform:translateY(0) rotateY(0deg) rotateX(0deg)}
+  25%{transform:translateY(-8px) rotateY(8deg) rotateX(3deg)}
+  50%{transform:translateY(-4px) rotateY(0deg) rotateX(-2deg)}
+  75%{transform:translateY(-10px) rotateY(-8deg) rotateX(3deg)}
+}
+.pos-card:hover .pos-avatar{animation-play-state:paused;transform:scale(1.08) rotateY(15deg)}
+.pos-card h3{font-weight:700;font-size:1rem;color:var(--midnight);margin-bottom:.35rem}
+.pos-card p{font-size:.82rem;color:var(--gray-500);line-height:1.45}
+
+/* BENEFITS */
+.benefits{padding:2rem 1.5rem 2.5rem;max-width:780px;margin:0 auto}
+.benefits h2{
+  font-family:'Playfair Display',serif;font-weight:700;font-size:1.6rem;
+  color:var(--midnight);text-align:center;margin-bottom:2rem;
+}
+.ben-grid{display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:600px){.ben-grid{grid-template-columns:repeat(3,1fr)}}
+.ben-grid .ben-card:last-child:nth-child(odd){grid-column:1/-1;max-width:50%;justify-self:center}
+@media(max-width:599px){.ben-grid .ben-card:last-child:nth-child(odd){max-width:100%}}
+.ben-card{
+  background:#fff;border-radius:12px;padding:1.25rem 1rem;text-align:center;
+  border:1px solid #e2e8f0;transition:all .25s;
+}
+.ben-card:hover{border-color:var(--teal);box-shadow:0 6px 24px rgba(0,212,255,.1);transform:translateY(-2px)}
+.ben-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:rgba(0,212,255,.08);color:var(--teal-dark);
+  display:inline-flex;align-items:center;justify-content:center;
+  margin-bottom:.6rem;
+}
+.ben-icon svg{width:22px;height:22px}
+.ben-card h3{font-weight:700;font-size:.88rem;color:var(--midnight);margin-bottom:.3rem}
+.ben-card p{font-size:.78rem;color:var(--gray-500);line-height:1.4}
+
+/* FORM SECTION */
+.form-section{
+  max-width:620px;margin:0 auto;padding:0 1.5rem 4rem;
+}
+.form-section h2{
+  font-family:'Playfair Display',serif;font-weight:700;font-size:1.6rem;
+  color:var(--midnight);text-align:center;margin-bottom:.5rem;
+}
+.form-section .subtitle{
+  text-align:center;color:var(--gray-500);font-size:.9rem;margin-bottom:2rem;
+}
+.app-form{
+  background:#fff;border-radius:18px;padding:2rem 1.75rem;
+  box-shadow:0 4px 30px rgba(0,0,0,.06);border:1px solid #e8ecf0;
+}
+.field{margin-bottom:1.25rem}
+.field label{
+  display:block;font-weight:600;font-size:.85rem;color:var(--midnight);
+  margin-bottom:.4rem;
+}
+.field label .req{color:var(--red);margin-left:2px}
+.field input,.field select{
+  width:100%;padding:.75rem 1rem;border:1.5px solid #dde3ea;border-radius:10px;
+  font-family:inherit;font-size:.95rem;color:var(--gray-700);
+  background:var(--gray-100);transition:all .2s;outline:none;
+}
+.field input:focus,.field select:focus{
+  border-color:var(--teal);background:#fff;box-shadow:0 0 0 3px var(--teal-glow);
+}
+.field select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.row2{display:grid;gap:1rem}
+@media(min-width:480px){.row2{grid-template-columns:1fr 1fr}}
+
+/* FILE UPLOAD */
+.file-zone{
+  border:2px dashed #cbd5e1;border-radius:12px;padding:1.75rem 1rem;
+  text-align:center;cursor:pointer;transition:all .25s;position:relative;
+  background:var(--gray-100);
+}
+.file-zone:hover,.file-zone.dragover{
+  border-color:var(--teal);background:var(--teal-glow);
+}
+.file-zone svg{width:36px;height:36px;color:var(--teal);margin-bottom:.5rem}
+.file-zone p{font-size:.85rem;color:var(--gray-500);line-height:1.5}
+.file-zone p strong{color:var(--teal);text-decoration:underline;cursor:pointer}
+.file-zone input[type=file]{
+  position:absolute;inset:0;opacity:0;cursor:pointer;
+}
+.file-name{
+  margin-top:.5rem;font-size:.82rem;color:var(--teal);font-weight:600;
+  display:none;
+}
+.file-name.show{display:block}
+
+/* SUBMIT */
+.submit-btn{
+  width:100%;padding:.9rem;border:none;border-radius:12px;
+  background:var(--teal);color:#050508;font-family:inherit;
+  font-weight:700;font-size:1rem;cursor:pointer;
+  transition:all .25s;margin-top:.5rem;
+  box-shadow:0 4px 16px rgba(0,212,255,.3);
+  -webkit-tap-highlight-color:transparent;
+}
+.submit-btn:hover{background:var(--teal-light);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,212,255,.4)}
+.submit-btn:active{transform:scale(.97)}
+
+/* FOOTER */
+footer{
+  text-align:center;padding:2rem 1.5rem;
+  color:var(--gray-500);font-size:.8rem;
+}
+
+/* ===== MOBILE OPTIMIZATIONS ===== */
+@media(max-width:480px){
+  .hero{padding:2rem 1rem 3rem}
+  .hero-logo{max-width:140px}
+  .hero-badge{font-size:.7rem;padding:.35rem .8rem}
+  .hero h1{font-size:1.6rem}
+  .hero p{font-size:.9rem;margin-bottom:1.5rem;padding:0 .25rem}
+  .scroll-btn{font-size:1rem;padding:.9rem 1.8rem;width:100%;justify-content:center;border-radius:14px}
+  .positions{padding:2rem 1rem .5rem}
+  .positions h2{font-size:1.3rem;margin-bottom:1.25rem}
+  .benefits{padding:1.5rem 1rem 2rem}
+  .benefits h2{font-size:1.3rem;margin-bottom:1.25rem}
+  .ben-grid{gap:.6rem}
+  .ben-card{padding:1rem .75rem}
+  .ben-icon{width:38px;height:38px}
+  .ben-icon svg{width:18px;height:18px}
+  .ben-card h3{font-size:.82rem}
+  .ben-card p{font-size:.74rem}
+  .pos-grid{gap:.75rem}
+  .pos-card{padding:1.25rem 1rem;border-radius:12px}
+  .pos-avatar{width:80px;height:80px}
+  .pos-card h3{font-size:.95rem}
+  .pos-card p{font-size:.78rem}
+  .form-section{padding:0 .75rem 3rem}
+  .form-section h2{font-size:1.3rem}
+  .form-section .subtitle{font-size:.82rem}
+  .app-form{padding:1.25rem 1rem;border-radius:14px}
+  .field label{font-size:.82rem}
+  .field input,.field select{padding:.85rem 1rem;font-size:1rem;border-radius:10px}
+  .row2{grid-template-columns:1fr}
+  .file-zone{padding:1.5rem .75rem}
+  .file-zone svg{width:32px;height:32px}
+  .file-zone p{font-size:.8rem}
+  .submit-btn{padding:1rem;font-size:1.05rem;border-radius:14px;min-height:52px}
+  footer{padding:1.5rem 1rem;font-size:.75rem}
+}
+/* Touch-friendly inputs */
+@media(pointer:coarse){
+  .field input,.field select{min-height:48px;font-size:16px}
+  .submit-btn{min-height:54px}
+  .scroll-btn{min-height:52px}
+  .pos-card{min-height:auto}
+}
+/* Safe area for notch phones */
+@supports(padding-top:env(safe-area-inset-top)){
+  .hero{padding-top:calc(2rem + env(safe-area-inset-top))}
+  footer{padding-bottom:calc(1.5rem + env(safe-area-inset-bottom))}
+}
+footer a{color:var(--teal);text-decoration:none;font-weight:600}
+
+/* ANIMATIONS */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-16px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.fade-in{opacity:0;transform:translateY(20px);transition:all .5s ease-out}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* CONFIRMATION */
+.confirmation{
+  display:none;text-align:center;padding:3rem 1.5rem;
+}
+.confirmation.show{display:block}
+.confirmation svg{width:64px;height:64px;color:var(--teal);margin-bottom:1rem}
+.confirmation h3{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--midnight);margin-bottom:.5rem}
+.confirmation p{color:var(--gray-500);font-size:.95rem}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img src="logo.png" alt="Plan B" class="hero-logo">
+  <div class="hero-badge">📢 Vacantes Abiertas 2026</div>
+  <h1>Únete al equipo de<br><span>Plan B</span></h1>
+  <p>Buscamos talento comprometido para nuestras operaciones de trade marketing farmacéutico a nivel nacional.</p>
+  <a href="#aplicar" class="scroll-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Postúlate Ahora
+  </a>
+</section>
+
+<!-- POSITIONS -->
+<section class="positions fade-in" id="vacantes">
+  <h2>Posiciones Disponibles</h2>
+  <div class="pos-grid">
+    <div class="pos-card" data-cargo="Impulsadora" onclick="selectCargo(this)">
+      <div class="pos-avatar">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="skin1" cx="50%" cy="40%"><stop offset="0%" stop-color="#fcd5b8"/><stop offset="100%" stop-color="#e8b896"/></radialGradient>
+            <linearGradient id="shirt1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#00d4ff"/><stop offset="100%" stop-color="#00a8cc"/></linearGradient>
+            <filter id="shadow1"><feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".15"/></filter>
+          </defs>
+          <!-- body -->
+          <ellipse cx="60" cy="105" rx="28" ry="12" fill="#00d4ff" opacity=".12"/>
+          <path d="M38 78c-4 4-8 14-8 22h60c0-8-4-18-8-22-4-4-10-6-22-6s-18 2-22 6z" fill="url(#shirt1)" filter="url(#shadow1)"/>
+          <rect x="48" y="82" width="24" height="4" rx="2" fill="#fff" opacity=".3"/>
+          <!-- badge -->
+          <rect x="66" y="78" width="14" height="10" rx="3" fill="#f59e0b"/>
+          <text x="73" y="86" font-size="6" fill="#fff" text-anchor="middle" font-weight="700">ID</text>
+          <!-- neck -->
+          <rect x="54" y="58" width="12" height="14" rx="4" fill="url(#skin1)"/>
+          <!-- head -->
+          <circle cx="60" cy="42" r="22" fill="url(#skin1)" filter="url(#shadow1)"/>
+          <!-- hair -->
+          <path d="M38 38c0-14 10-24 22-24s22 10 22 24c0 2-1 3-2 4 0-12-8-20-20-20s-20 8-20 20c-1-1-2-2-2-4z" fill="#4a2c1a"/>
+          <path d="M38 38c-1 4 0 8 2 10 0-6 3-12 8-14-4 2-8 2-10 4z" fill="#3d2317"/>
+          <path d="M82 38c1 4 0 8-2 10 0-6-3-12-8-14 4 2 8 2 10 4z" fill="#3d2317"/>
+          <!-- eyes -->
+          <ellipse cx="51" cy="42" rx="3" ry="3.5" fill="#2d1810"/>
+          <ellipse cx="69" cy="42" rx="3" ry="3.5" fill="#2d1810"/>
+          <circle cx="52" cy="41" r="1" fill="#fff"/>
+          <circle cx="70" cy="41" r="1" fill="#fff"/>
+          <!-- smile -->
+          <path d="M53 50q7 6 14 0" fill="none" stroke="#c97a5a" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- megaphone -->
+          <g transform="translate(85,55) rotate(-25)">
+            <path d="M0 0l18-8v20l-18-8z" fill="#f59e0b"/>
+            <rect x="-6" y="-3" width="7" height="10" rx="2" fill="#fbbf24"/>
+            <ellipse cx="18" cy="2" rx="3" ry="10" fill="#f59e0b" opacity=".5"/>
+          </g>
+          <!-- sound waves -->
+          <path d="M106 42q4 6 0 14" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity=".6" stroke-linecap="round"><animate attributeName="opacity" values=".6;0;.6" dur="1.2s" repeatCount="indefinite"/></path>
+          <path d="M110 38q6 10 0 22" fill="none" stroke="#f59e0b" stroke-width="1.2" opacity=".4" stroke-linecap="round"><animate attributeName="opacity" values=".4;0;.4" dur="1.2s" begin=".3s" repeatCount="indefinite"/></path>
+        </svg>
+      </div>
+      <h3>Impulsadora</h3>
+      <p>Promoción directa de productos en punto de venta. Impulso de rotación y visibilidad de marca.</p>
+    </div>
+    <div class="pos-card" data-cargo="Mercaderista" onclick="selectCargo(this)">
+      <div class="pos-avatar">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="skin2" cx="50%" cy="40%"><stop offset="0%" stop-color="#f5d0a9"/><stop offset="100%" stop-color="#dba87a"/></radialGradient>
+            <linearGradient id="shirt2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a2a3a"/><stop offset="100%" stop-color="#0f1923"/></linearGradient>
+          </defs>
+          <ellipse cx="60" cy="108" rx="28" ry="10" fill="#1a2a3a" opacity=".1"/>
+          <!-- body -->
+          <path d="M38 78c-4 4-8 14-8 22h60c0-8-4-18-8-22-4-4-10-6-22-6s-18 2-22 6z" fill="url(#shirt2)" filter="url(#shadow1)"/>
+          <!-- apron -->
+          <path d="M44 80h32v20H44z" fill="#00d4ff" rx="2"/>
+          <rect x="56" y="80" width="8" height="8" rx="2" fill="#00a8cc"/>
+          <!-- neck -->
+          <rect x="54" y="58" width="12" height="14" rx="4" fill="url(#skin2)"/>
+          <!-- head -->
+          <circle cx="60" cy="42" r="22" fill="url(#skin2)" filter="url(#shadow1)"/>
+          <!-- hair short -->
+          <path d="M38 36c0-14 10-24 22-24s22 10 22 24c-2-10-10-18-22-18s-20 8-22 18z" fill="#1a1a2e"/>
+          <!-- cap -->
+          <path d="M36 36c0-2 2-10 24-10s24 8 24 10H36z" fill="#00d4ff"/>
+          <rect x="36" y="34" width="48" height="5" rx="2" fill="#00a8cc"/>
+          <rect x="50" y="28" width="20" height="8" rx="3" fill="#00d4ff"/>
+          <!-- eyes -->
+          <ellipse cx="51" cy="43" rx="3" ry="3.2" fill="#1a1a2e"/>
+          <ellipse cx="69" cy="43" rx="3" ry="3.2" fill="#1a1a2e"/>
+          <circle cx="52" cy="42" r="1" fill="#fff"/>
+          <circle cx="70" cy="42" r="1" fill="#fff"/>
+          <!-- smile -->
+          <path d="M54 51q6 5 12 0" fill="none" stroke="#b5785a" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- clipboard -->
+          <g transform="translate(12,62) rotate(10)">
+            <rect x="0" y="0" width="18" height="24" rx="2" fill="#fbbf24" filter="url(#shadow1)"/>
+            <rect x="5" y="-3" width="8" height="5" rx="2" fill="#d97706"/>
+            <line x1="4" y1="8" x2="14" y2="8" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+            <line x1="4" y1="12" x2="14" y2="12" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+            <line x1="4" y1="16" x2="10" y2="16" stroke="#fff" stroke-width="1.2" opacity=".6"/>
+            <!-- checkmark -->
+            <path d="M11 15l2 2 3-4" fill="none" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"><animate attributeName="opacity" values="0;1;1;0" dur="2s" repeatCount="indefinite"/></path>
+          </g>
+          <!-- boxes -->
+          <g transform="translate(88,70)">
+            <rect x="0" y="8" width="16" height="14" rx="2" fill="#f59e0b" opacity=".8"/>
+            <rect x="-6" y="0" width="14" height="12" rx="2" fill="#fbbf24"/>
+            <line x1="-6" y1="6" x2="8" y2="6" stroke="#d97706" stroke-width=".8"/>
+            <line x1="1" y1="0" x2="1" y2="12" stroke="#d97706" stroke-width=".8"/>
+          </g>
+        </svg>
+      </div>
+      <h3>Mercaderista</h3>
+      <p>Gestión de exhibición, planogramas y control de stock en cadenas farmacéuticas y retail.</p>
+    </div>
+    <div class="pos-card" data-cargo="Dermoconsejera" onclick="selectCargo(this)">
+      <div class="pos-avatar">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="skin3" cx="50%" cy="40%"><stop offset="0%" stop-color="#fce0cc"/><stop offset="100%" stop-color="#f0c4a0"/></radialGradient>
+            <linearGradient id="coat3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffffff"/><stop offset="100%" stop-color="#e8ecf0"/></linearGradient>
+          </defs>
+          <ellipse cx="60" cy="108" rx="28" ry="10" fill="#ccc" opacity=".1"/>
+          <!-- body / lab coat -->
+          <path d="M38 78c-4 4-8 14-8 22h60c0-8-4-18-8-22-4-4-10-6-22-6s-18 2-22 6z" fill="url(#coat3)" filter="url(#shadow1)"/>
+          <!-- coat lapels -->
+          <path d="M52 72l8 14h-6z" fill="#e2e8f0"/>
+          <path d="M68 72l-8 14h6z" fill="#e2e8f0"/>
+          <!-- coat collar teal -->
+          <path d="M50 72q10-3 20 0" fill="none" stroke="#00d4ff" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- pocket -->
+          <rect x="66" y="86" width="10" height="8" rx="2" fill="#e2e8f0" stroke="#cbd5e1" stroke-width=".5"/>
+          <!-- pen in pocket -->
+          <line x1="70" y1="84" x2="70" y2="90" stroke="#00d4ff" stroke-width="1.5" stroke-linecap="round"/>
+          <!-- neck -->
+          <rect x="54" y="58" width="12" height="14" rx="4" fill="url(#skin3)"/>
+          <!-- head -->
+          <circle cx="60" cy="42" r="22" fill="url(#skin3)" filter="url(#shadow1)"/>
+          <!-- hair -->
+          <path d="M38 38c0-16 10-26 22-26s22 10 22 26c0 2 0 4-1 6-1-14-9-22-21-22s-20 8-21 22c-1-2-1-4-1-6z" fill="#2d1810"/>
+          <path d="M82 38c2 6 2 14-2 20 2-10-2-16-6-18 4 0 6-1 8-2z" fill="#231510"/>
+          <path d="M38 38c-2 6-2 14 2 20-2-10 2-16 6-18-4 0-6-1-8-2z" fill="#231510"/>
+          <!-- bun -->
+          <circle cx="60" cy="16" r="8" fill="#2d1810"/>
+          <!-- eyes with lashes -->
+          <ellipse cx="51" cy="42" rx="3" ry="3.5" fill="#2d1810"/>
+          <ellipse cx="69" cy="42" rx="3" ry="3.5" fill="#2d1810"/>
+          <circle cx="52" cy="41" r="1.2" fill="#fff"/>
+          <circle cx="70" cy="41" r="1.2" fill="#fff"/>
+          <path d="M47 38q4-2 8 0" fill="none" stroke="#2d1810" stroke-width=".8"/>
+          <path d="M65 38q4-2 8 0" fill="none" stroke="#2d1810" stroke-width=".8"/>
+          <!-- lips -->
+          <path d="M55 50q5 5 10 0" fill="#e88a98" opacity=".6"/>
+          <!-- serum bottle -->
+          <g transform="translate(90,58)">
+            <rect x="0" y="6" width="14" height="22" rx="4" fill="#b3ecff" filter="url(#shadow1)"/>
+            <rect x="3" y="0" width="8" height="8" rx="2" fill="#d9f4ff"/>
+            <rect x="5" y="-2" width="4" height="3" rx="1" fill="#ccc"/>
+            <!-- sparkle -->
+            <circle cx="7" cy="15" r="2" fill="#fff" opacity=".7"><animate attributeName="opacity" values=".3;.9;.3" dur="1.5s" repeatCount="indefinite"/></circle>
+            <text x="7" y="24" font-size="5" fill="#00d4ff" text-anchor="middle" font-weight="700">Rx</text>
+          </g>
+          <!-- sparkles around -->
+          <g fill="#00d4ff" opacity=".5">
+            <circle cx="20" cy="65" r="1.5"><animate attributeName="r" values="1;2;1" dur="2s" repeatCount="indefinite"/></circle>
+            <circle cx="100" cy="45" r="1.5"><animate attributeName="r" values="1.5;2.5;1.5" dur="1.8s" repeatCount="indefinite"/></circle>
+            <circle cx="28" cy="50" r="1"><animate attributeName="r" values="1;1.8;1" dur="2.2s" repeatCount="indefinite"/></circle>
+          </g>
+        </svg>
+      </div>
+      <h3>Dermoconsejera</h3>
+      <p>Asesoría especializada en dermocosmética en farmacias. Conocimiento técnico de productos de piel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits fade-in" id="beneficios">
+  <h2>¿Por qué trabajar en Plan B?</h2>
+  <div class="ben-grid">
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3>Estabilidad laboral</h3>
+      <p>Contratos formales y continuidad en proyectos a largo plazo.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      </div>
+      <h3>Capacitación continua</h3>
+      <p>Formación constante en productos, técnicas de venta y servicio al cliente.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+      </div>
+      <h3>Buen ambiente de trabajo</h3>
+      <p>Equipo colaborativo y cultura organizacional positiva.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      </div>
+      <h3>Oportunidad de crecimiento</h3>
+      <p>Plan de carrera con posibilidades reales de ascenso dentro de la empresa.</p>
+    </div>
+    <div class="ben-card">
+      <div class="ben-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2 12 3.46 8 2 3.62 3.46a2 2 0 00-1.34 1.89v13.3a2 2 0 001.34 1.89L8 22l4-1.46L16 22l4.38-1.46a2 2 0 001.34-1.89V5.35a2 2 0 00-1.34-1.89z"/><line x1="12" y1="22" x2="12" y2="3.46"/></svg>
+      </div>
+      <h3>Uniforme y materiales</h3>
+      <p>Todo lo que necesitas para trabajar, sin costo adicional para ti.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="form-section fade-in" id="aplicar">
+  <h2>Formulario de Aplicación</h2>
+  <p class="subtitle">Completa tus datos y adjunta tu hoja de vida. Nos pondremos en contacto contigo.</p>
+
+  <form class="app-form" id="appForm" action="https://formsubmit.co/jimmy.salvador86@gmail.com" method="POST" enctype="multipart/form-data">
+    
+    <!-- FormSubmit config -->
+    <input type="hidden" name="_subject" value="📩 Nueva Aplicación — Plan B Strategic Solutions">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" id="redirectUrl">
+    <input type="text" name="_honey" style="display:none">
+
+    <div class="row2">
+      <div class="field">
+        <label>Nombres <span class="req">*</span></label>
+        <input type="text" name="Nombres" placeholder="Ej: María José" required>
+      </div>
+      <div class="field">
+        <label>Apellidos <span class="req">*</span></label>
+        <input type="text" name="Apellidos" placeholder="Ej: López García" required>
+      </div>
+    </div>
+
+    <div class="row2">
+      <div class="field">
+        <label>Número de Celular <span class="req">*</span></label>
+        <input type="tel" name="Celular" placeholder="Ej: 0991234567" pattern="[0-9]{10}" title="Ingresa 10 dígitos" required>
+      </div>
+      <div class="field">
+        <label>Cargo al que aplica <span class="req">*</span></label>
+        <select name="Cargo" required>
+          <option value="" disabled selected>Selecciona un cargo</option>
+          <option value="Impulsadora">Impulsadora</option>
+          <option value="Mercaderista">Mercaderista</option>
+          <option value="Dermoconsejera">Dermoconsejera</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Ciudad de residencia <span class="req">*</span></label>
+      <input type="text" name="Ciudad" id="ciudadInput" placeholder="Detectando ubicación..." required>
+    </div>
+
+    <div class="field">
+      <label>Hoja de Vida (PDF) <span class="req">*</span></label>
+      <div class="file-zone" id="fileZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+        <p><strong>Haz clic aquí</strong> o arrastra tu archivo<br>PDF — Máximo 5 MB</p>
+        <input type="file" name="attachment" accept=".pdf" required>
+      </div>
+      <div class="file-name" id="fileName"></div>
+    </div>
+
+    <button type="submit" class="submit-btn">Enviar mi Aplicación →</button>
+  </form>
+
+  <div class="confirmation" id="confirmation">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <h3>¡Aplicación Enviada!</h3>
+    <p>Gracias por tu interés. Revisaremos tu perfil y te contactaremos pronto.</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 <a href="#">Plan B</a> · Quito, Ecuador
+</footer>
+
+<script>
+// Set redirect URL to same page with success param
+const currentUrl = window.location.href.split('?')[0];
+document.getElementById('redirectUrl').value = currentUrl + '?sent=1';
+
+// Check if returning from successful submission
+if(window.location.search.includes('sent=1')){
+  document.getElementById('appForm').style.display='none';
+  document.querySelector('.form-section .subtitle').style.display='none';
+  document.getElementById('confirmation').classList.add('show');
+}
+
+// File name display
+const fileInput = document.querySelector('input[type=file]');
+const fileNameEl = document.getElementById('fileName');
+const fileZone = document.getElementById('fileZone');
+
+fileInput.addEventListener('change', function(){
+  if(this.files.length){
+    fileNameEl.textContent = '📎 ' + this.files[0].name;
+    fileNameEl.classList.add('show');
+    fileZone.style.borderColor = '#00d4ff';
+  }
+});
+
+// Drag & drop visual
+fileZone.addEventListener('dragover', e=>{e.preventDefault();fileZone.classList.add('dragover')});
+fileZone.addEventListener('dragleave', ()=>fileZone.classList.remove('dragover'));
+fileZone.addEventListener('drop', ()=>fileZone.classList.remove('dragover'));
+
+// Auto-detect city
+(async()=>{
+  const inp = document.getElementById('ciudadInput');
+  try{
+    const r = await fetch('https://ipapi.co/json/');
+    const d = await r.json();
+    if(d.city) inp.value = d.city;
+    else inp.placeholder = 'Ej: Quito';
+  }catch{inp.placeholder='Ej: Quito'}
+})();
+
+// Select cargo from card click
+function selectCargo(card){
+  document.querySelectorAll('.pos-card').forEach(c=>c.classList.remove('active'));
+  card.classList.add('active');
+  const cargo = card.dataset.cargo;
+  const sel = document.querySelector('select[name=Cargo]');
+  sel.value = cargo;
+  document.getElementById('aplicar').scrollIntoView({behavior:'smooth'});
+}
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.15});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
