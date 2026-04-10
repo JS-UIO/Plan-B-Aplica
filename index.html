@@ -631,11 +631,20 @@ async function submitForm(e){
     
     const resp = await fetch(APPS_SCRIPT_URL, {
       method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
       body: JSON.stringify(payload)
     });
-    
+
+    // Google Apps Script no permite leer respuesta por CORS
+    // Si no hubo error en el fetch, asumimos éxito
+    form.style.display='none';
+    document.querySelector('.form-section .subtitle').style.display='none';
+    document.getElementById('confirmation').classList.add('show');
+    return;
+
     const result = await resp.json();
-    
+
     if(result.success){
       form.style.display='none';
       document.querySelector('.form-section .subtitle').style.display='none';
