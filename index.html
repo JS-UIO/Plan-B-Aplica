@@ -142,9 +142,10 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--gray-7
   font-family:'Playfair Display',serif;font-weight:700;font-size:1.6rem;
   color:var(--midnight);text-align:center;margin-bottom:2rem;
 }
-.ben-grid{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
-.ben-grid .ben-card{width:calc(50% - .375rem)}
-@media(min-width:600px){.ben-grid .ben-card{width:calc(33.333% - .5rem)}}
+.ben-grid{display:grid;gap:.75rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:600px){.ben-grid{grid-template-columns:repeat(3,1fr)}}
+.ben-grid .ben-card:last-child:nth-child(odd){grid-column:1/-1;max-width:50%;justify-self:center}
+@media(max-width:599px){.ben-grid .ben-card:last-child:nth-child(odd){max-width:100%}}
 .ben-card{
   background:#fff;border-radius:12px;padding:1.25rem 1rem;text-align:center;
   border:1px solid #e2e8f0;transition:all .25s;
@@ -522,14 +523,7 @@ footer a{color:var(--teal);text-decoration:none;font-weight:600}
   <h2>Formulario de Aplicación</h2>
   <p class="subtitle">Completa tus datos y adjunta tu hoja de vida. Nos pondremos en contacto contigo.</p>
 
-  <form class="app-form" id="appForm" action="https://formsubmit.co/talentohumano@planbtlpharma.com" method="POST" enctype="multipart/form-data">
-    
-    <!-- FormSubmit config -->
-    <input type="hidden" name="_subject" value="📩 Nueva Aplicación — Plan B Strategic Solutions">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" id="redirectUrl">
-    <input type="text" name="_honey" style="display:none">
+  <form class="app-form" id="appForm" onsubmit="submitForm(event)">
 
     <div class="row2">
       <div class="field">
@@ -573,7 +567,7 @@ footer a{color:var(--teal);text-decoration:none;font-weight:600}
       <div class="file-name" id="fileName"></div>
     </div>
 
-    <button type="submit" class="submit-btn">Enviar mi Aplicación →</button>
+    <button type="submit" class="submit-btn" id="submitBtn">Enviar mi Aplicación →</button>
   </form>
 
   <div class="confirmation" id="confirmation">
@@ -588,15 +582,73 @@ footer a{color:var(--teal);text-decoration:none;font-weight:600}
 </footer>
 
 <script>
-// Set redirect URL to same page with success param
-const currentUrl = window.location.href.split('?')[0];
-document.getElementById('redirectUrl').value = currentUrl + '?sent=1';
+// =============================================
+// IMPORTANTE: Reemplaza esta URL con la tuya
+// =============================================
+const APPS_SCRIPT_URL = 'TU_URL_DE_APPS_SCRIPT_AQUI';
 
-// Check if returning from successful submission
-if(window.location.search.includes('sent=1')){
-  document.getElementById('appForm').style.display='none';
-  document.querySelector('.form-section .subtitle').style.display='none';
-  document.getElementById('confirmation').classList.add('show');
+// Submit form via Apps Script
+async function submitForm(e){
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const form = document.getElementById('appForm');
+  
+  // Validar archivo
+  const fileInput = document.querySelector('input[type=file]');
+  if(!fileInput.files.length){
+    alert('Por favor adjunta tu hoja de vida.');
+    return;
+  }
+  const file = fileInput.files[0];
+  if(file.size > 5*1024*1024){
+    alert('El archivo no puede superar 5 MB.');
+    return;
+  }
+  
+  // Estado de carga
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+  btn.style.opacity = '.7';
+  
+  try{
+    // Leer archivo como base64
+    const base64 = await new Promise((res,rej)=>{
+      const r = new FileReader();
+      r.onload = ()=> res(r.result.split(',')[1]);
+      r.onerror = ()=> rej('Error leyendo archivo');
+      r.readAsDataURL(file);
+    });
+    
+    const payload = {
+      nombres: form.querySelector('[name=Nombres]').value.trim(),
+      apellidos: form.querySelector('[name=Apellidos]').value.trim(),
+      celular: form.querySelector('[name=Celular]').value.trim(),
+      cargo: form.querySelector('[name=Cargo]').value,
+      ciudad: form.querySelector('[name=Ciudad]').value.trim(),
+      fileName: file.name,
+      fileData: base64
+    };
+    
+    const resp = await fetch(APPS_SCRIPT_URL, {
+      method:'POST',
+      body: JSON.stringify(payload)
+    });
+    
+    const result = await resp.json();
+    
+    if(result.success){
+      form.style.display='none';
+      document.querySelector('.form-section .subtitle').style.display='none';
+      document.getElementById('confirmation').classList.add('show');
+    } else {
+      throw new Error(result.message || 'Error al enviar');
+    }
+  }catch(err){
+    alert('Hubo un error al enviar tu aplicación. Por favor intenta de nuevo.\n\n' + err);
+    btn.disabled = false;
+    btn.textContent = 'Enviar mi Aplicación →';
+    btn.style.opacity = '1';
+  }
 }
 
 // File name display
@@ -606,9 +658,16 @@ const fileZone = document.getElementById('fileZone');
 
 fileInput.addEventListener('change', function(){
   if(this.files.length){
-    fileNameEl.textContent = '📎 ' + this.files[0].name;
+    const size = (this.files[0].size / 1024 / 1024).toFixed(1);
+    fileNameEl.textContent = '📎 ' + this.files[0].name + ' (' + size + ' MB)';
     fileNameEl.classList.add('show');
     fileZone.style.borderColor = '#00d4ff';
+    if(this.files[0].size > 5*1024*1024){
+      fileNameEl.textContent = '⚠️ El archivo supera 5 MB. Selecciona uno más pequeño.';
+      fileNameEl.style.color = '#ef4444';
+    } else {
+      fileNameEl.style.color = '';
+    }
   }
 });
 
