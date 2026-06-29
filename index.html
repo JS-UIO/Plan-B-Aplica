@@ -680,25 +680,17 @@ async function submitForm(e){
       fileData: base64
     };
     
-    // Enviar usando fetch con redirect follow (sin no-cors)
-    try {
-      const resp = await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        headers: {'Content-Type': 'text/plain;charset=utf-8'},
-        body: JSON.stringify(payload),
-        redirect: 'follow'
-      });
-      const result = await resp.json();
-      if(!result.success) throw new Error(result.message);
-    } catch(fetchErr) {
-      // Si falla fetch directo, intentar con no-cors (el envío llega pero no podemos leer respuesta)
-      await fetch(APPS_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: {'Content-Type': 'text/plain;charset=utf-8'},
-        body: JSON.stringify(payload)
-      });
-    }
+    // Apps Script no devuelve cabeceras CORS legibles desde una página estática
+    // (el /exec hace un redirect 302 a googleusercontent.com que el navegador
+    // bloquea para lectura). Por eso enviamos en modo no-cors: el POST llega y
+    // se procesa, la respuesta es opaca. La confirmación real llega por el email
+    // a Talento Humano y la fila en Sheets que genera el doPost.
+    await fetch(APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {'Content-Type': 'text/plain;charset=utf-8'},
+      body: JSON.stringify(payload)
+    });
     
     form.style.display='none';
     document.querySelector('.form-section .subtitle').style.display='none';
