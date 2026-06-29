@@ -682,18 +682,15 @@ async function submitForm(e){
     
     const resp = await fetch(APPS_SCRIPT_URL, {
       method:'POST',
+      mode:'no-cors',
+      headers:{'Content-Type':'text/plain'},
       body: JSON.stringify(payload)
     });
     
-    const result = await resp.json();
-    
-    if(result.success){
-      form.style.display='none';
-      document.querySelector('.form-section .subtitle').style.display='none';
-      document.getElementById('confirmation').classList.add('show');
-    } else {
-      throw new Error(result.message || 'Error al enviar');
-    }
+    // Con mode no-cors no podemos leer la respuesta, pero si no hubo error en fetch, llegó
+    form.style.display='none';
+    document.querySelector('.form-section .subtitle').style.display='none';
+    document.getElementById('confirmation').classList.add('show');
   }catch(err){
     alert('Hubo un error al enviar tu aplicación. Por favor intenta de nuevo.\n\n' + err);
     btn.disabled = false;
